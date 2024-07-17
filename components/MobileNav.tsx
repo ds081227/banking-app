@@ -33,7 +33,7 @@ export default function MobileNav({ user }: MobileNavProps) {
           <Link
             href="/"
             className="flex cursor-pointer items-center gap-1 px-4">
-            <Image src="/icons/logo.svg" alt="logo" width={32} height={32} />
+            <Image src="/icons/logo.svg" alt="logo" width={34} height={34} />
             <h1 className="text-26 font-ibm-plex-serif font-bold text-black-1">
               Horizon
             </h1>
