@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Footer from "./Footer";
 
 export default function Sidebar({ user }: SiderbarProps) {
   const pathName = usePathname();
@@ -52,7 +53,7 @@ export default function Sidebar({ user }: SiderbarProps) {
         })}
         USER
       </nav>
-      FOOTER
+      <Footer user={user} />
     </section>
   );
 }
