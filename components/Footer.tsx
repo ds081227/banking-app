@@ -22,7 +22,8 @@ export default function Footer({ user, type = "desktop" }: FooterProps) {
           {user?.email}
         </p>
       </div>
-      <div className="footer_image">
+      <div
+        className={type === "mobile" ? "footer_image-mobile" : "footer_image"}>
         <Image
           onClick={handleLogout}
           src="icons/logout.svg"

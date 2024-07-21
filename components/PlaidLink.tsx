@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { Button } from "./ui/button";
 import {
   PlaidLinkOnSuccess,
@@ -12,12 +12,15 @@ import {
 } from "@/lib/actions/user.actions";
 import Image from "next/image";
 
-export default function PlaidLink({ user, variant }: PlaidLinkProps) {
+const PlaidLink = ({ user, variant }: PlaidLinkProps) => {
   const router = useRouter();
+
   const [token, setToken] = useState("");
+
   useEffect(() => {
     const getLinkToken = async () => {
       const data = await createLinkToken(user);
+
       setToken(data?.linkToken);
     };
 
@@ -30,6 +33,7 @@ export default function PlaidLink({ user, variant }: PlaidLinkProps) {
         publicToken: public_token,
         user,
       });
+
       router.push("/");
     },
     [user]
@@ -74,9 +78,13 @@ export default function PlaidLink({ user, variant }: PlaidLinkProps) {
             width={24}
             height={24}
           />
-          <p className="text-[16px] font-semibold text-black-2">Connect bank</p>
+          <p className="max-xl:hidden text-[16px] font-semibold text-black-2">
+            Connect bank
+          </p>
         </Button>
       )}
     </>
   );
-}
+};
+
+export default PlaidLink;

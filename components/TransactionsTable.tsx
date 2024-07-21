@@ -79,7 +79,7 @@ export default function TransactionsTable({
               <TableCell className="min-w-32 pl-2 pr-10">
                 {formatDateTime(new Date(t.date)).dateTime}
               </TableCell>
-              <TableCell className="capitalize min-w-24 pl-2 pr-10 ">
+              <TableCell className="capitalize min-w-24 pl-2 pr-10 max-md:hidden">
                 {t.paymentChannel}
               </TableCell>
               <TableCell className="pl-2 pr-10 max-md:hidden">
